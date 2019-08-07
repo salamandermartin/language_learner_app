@@ -18,6 +18,7 @@ def quotePicker():
     return chosen_quote
 
 
+
 #handlers
 class WelcomePageHandler(webapp2.RequestHandler):
     def get(self):
