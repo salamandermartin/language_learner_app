@@ -14,7 +14,7 @@ the_jinja_env = jinja2.Environment(
 #handlers
 class WelcomePageHandler(webapp2.RequestHandler):
     def get(self):
-        welcome_page_template = the_jinja_env.get_template
+        welcome_page_template = the_jinja_env.get_template('templates/welcome_page_template.html')
 
 # uncomment these when the first page is done
 
