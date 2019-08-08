@@ -41,9 +41,17 @@ class ResultPageHandler(webapp2.RequestHandler):
         result_page_template = the_jinja_env.get_template('templates/result_page_template.html')
         item1 = self.request.get('Item 1')
         item2 = self.request.get('Item 2')
+        item3 = self.request.get('Item 3')
+        item4 = self.request.get('Item 4')
+        item5 = self.request.get('Item 5')
         list_variables = {
-            'firstitem': item1
+            'firstitem': item1,
+            'seconditem': item2,
+            'thirditem': item3,
+            'fourthitem': item4,
+            'fifthitem': item5
         }
+        self.response.write(result_page_template.render(list_variables))
 
 #app configuration section
 app = webapp2.WSGIApplication([
