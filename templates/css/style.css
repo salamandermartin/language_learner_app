@@ -33,6 +33,13 @@
     text-align: center;
 }
 
+/* TABLE RESULTS */
+.tableresult {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  text-align: center;
+
 
 /* DIVIDE */
 
