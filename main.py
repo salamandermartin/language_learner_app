@@ -23,6 +23,7 @@ def quotePicker():
 class WelcomePageHandler(webapp2.RequestHandler):
     def get(self):
         welcome_page_template = the_jinja_env.get_template('templates/welcome_page_template.html')
+        self.response.write(welcome_template.render())
 
 # uncomment these when the first page is done
 
