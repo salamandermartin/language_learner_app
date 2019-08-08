@@ -17,6 +17,14 @@ def quotePicker():
     chosen_quote = quotes[decider]
     return chosen_quote
 
+def es_translator(x):
+    if x[-1:] == 'z':
+        return (x[:-1] + 'ces')
+    elif x[-1:] == 'a' or x[-1:] == 'e' or x[-1:] == 'o' or x[-1:] == 'i' or x[-1:] == 'u':
+        return (x + 's')
+    else:
+        return (x + 'es')
+
 
 
 #handlers
