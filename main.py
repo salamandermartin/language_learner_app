@@ -55,12 +55,27 @@ class ResultPageHandler(webapp2.RequestHandler):
         item3 = self.request.get('Item 3')
         item4 = self.request.get('Item 4')
         item5 = self.request.get('Item 5')
+        #item in spanish singular
+        #item in spanish plural
         list_variables = {
+            #word in english
             'firstitem': item1,
             'seconditem': item2,
             'thirditem': item3,
             'fourthitem': item4,
-            'fifthitem': item5
+            'fifthitem': item5,
+            #word in spanish (singular)
+            'tr_item1':'',
+            'tr_item2':'',
+            'tr_item3':'',
+            'tr_item4':'',
+            'tr_item5':'',
+            #word in spanish (plural)
+            'tr_items1':'',
+            'tr_items2':'',
+            'tr_items3':'',
+            'tr_items4':'',
+            'tr_items5':''
         }
         self.response.write(result_page_template.render(list_variables))
 
