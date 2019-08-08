@@ -30,14 +30,14 @@ class WelcomePageHandler(webapp2.RequestHandler):
 #     def get(self):
 #         list_page_template = the_jinja_env.get_template
 #
-# class ConjugationPageHandler(webapp2.RequestHandler):
+# class ResultPageHandler(webapp2.RequestHandler):
 #     def post(self):
 
 
 
 #app configuration section
 app = webapp2.WSGIApplication([
-    ('/',      ) #Welcome Page
-    ('/',      ) #List Page
-    ('/',      ) #Results Page
+    ('/', WelcomePageHandler) #Welcome Page
+    ('/list-go', ListPageHandler) #List Page
+    ('/result', ResultPageHandler) #Results Page
 ], debug=True)
