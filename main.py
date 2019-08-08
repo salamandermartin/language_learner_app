@@ -23,7 +23,6 @@ def quotePicker():
 class WelcomePageHandler(webapp2.RequestHandler):
     def get(self):
         welcome_page_template = the_jinja_env.get_template('templates/welcome_page_template.html')
-        welcome_quote = self.request
         welcome_variables = {
             'quote': str(quotePicker())
         }
@@ -37,14 +36,18 @@ class ListPageHandler(webapp2.RequestHandler):
         self.response.write(list_page_template.render())
 
 
-# class ResultPageHandler(webapp2.RequestHandler):
-#     def post(self):
-
-
+class ResultPageHandler(webapp2.RequestHandler):
+    def post(self):
+        result_page_template = the_jinja_env.get_template('templates/result_page_template.html')
+        item1 = self.request.get('Item 1')
+        item2 = self.request.get('Item 2')
+        list_variables = {
+            'firstitem': item1
+        }
 
 #app configuration section
 app = webapp2.WSGIApplication([
     ('/', WelcomePageHandler), #Welcome Page
-    ('/list-go', ListPageHandler) #List Page
-    #('/result', ResultPageHandler) #Results Page
+    ('/list-go', ListPageHandler), #List Page
+    ('/result', ResultPageHandler) #Results Page
 ], debug=True)
