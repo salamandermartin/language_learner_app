@@ -39,6 +39,6 @@ class ListPageHandler(webapp2.RequestHandler):
 #app configuration section
 app = webapp2.WSGIApplication([
     ('/', WelcomePageHandler) #Welcome Page
-    #('/list-go', ListPageHandler) #List Page
+    ('/list-go', ListPageHandler) #List Page
     #('/result', ResultPageHandler) #Results Page
 ], debug=True)
