@@ -1,5 +1,5 @@
-/* Welcome Header */
-.welcome{
+/* HEADER */
+.header{
   text-align: center;
   color: white;
   background-color: #4670a6;
@@ -9,16 +9,26 @@
   box-shadow: 10px 10px 5px -5px grey;
 }
 
-
-/* Start button */
-.start{
-    text-align: center;
-}
-
-#startbutton {
-
-}
-
+/* CONTAINER */
 .container {
   display: grid;
   grid-template-columns: 5fr 25fr;
+}
+/* CREATORS TAB */
+.creatorstab{
+  border-style: solid;
+  padding: 10px;
+}
+
+/* FEED TAB */
+.feedtab{
+  padding: 10px;
+}
+
+/* Start Button */
+#startbutton {
+
+}
+.start{
+    text-align: center;
+}
