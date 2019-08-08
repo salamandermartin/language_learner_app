@@ -11,9 +11,9 @@ the_jinja_env = jinja2.Environment(
 
 def quotePicker():
     decider = random.randint(0,2)
-    quotes = ['If you talk to a man in a language he understands, that goes to his head. If you talk to him in his language, that goes to his heart. \n - Nelson Mandela',
-              'A different language is a different vision of life. \n -Federico Fellini',
-              'With languages, you are at home anywhere. \n -Edmund de Waal ']
+    quotes = ['"If you talk to a man in a language he understands, that goes to his head. If you talk to him in his language, that goes to his heart." \n - Nelson Mandela',
+              '"A different language is a different vision of life." \n -Federico Fellini',
+              '"With languages, you are at home anywhere." \n -Edmund de Waal ']
     chosen_quote = quotes[decider]
     return chosen_quote
 
