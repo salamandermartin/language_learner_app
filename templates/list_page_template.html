@@ -2,20 +2,28 @@
 
 <head>
   <title> Word List </title>
-  <script src="listpage.js"></script>
-  <style src="css/list_style.css"></style>
-
+  <link rel="stylesheet" href="list_style.css">
 </head>
-
-<body>
-  <h1> List </h1>
-  <hr />
+<body style="background-color:#e0df84">
+  <section class="direction">
+  <h1>DIRECTIONS</h1>
+  </section>
+  <ul class="unorderlist">
+    <li>Enter your words</li>
+    <li>Press Go!</li>
 
   <form>
     <input type="text" name="Item 1"><br />
     <input type="text" name="Item 2"><br />
     <input type="text" name="Item 3"><br />
     <input type="text" name="Item 4"><br />
+    <input type="text" name="Item 5"><br />
   </form>
+  </ul>
+  <div class="go">
+    <form method="get" action="/result">
+      <button id="gobutton"type="submit">Go !</button>
+    </form>
+  </div>
 
 </body>
