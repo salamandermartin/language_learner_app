@@ -25,12 +25,12 @@ class WelcomePageHandler(webapp2.RequestHandler):
         welcome_page_template = the_jinja_env.get_template('templates/welcome_page_template.html')
         self.response.write(welcome_page_template.render())
 
-# uncomment these when the first page is done
 
-# class ListPageHandler(webapp2.RequestHandler):
-#     def get(self):
-#         list_page_template = the_jinja_env.get_template
-#
+
+class ListPageHandler(webapp2.RequestHandler):
+    def get(self):
+        list_page_template = the_jinja_env.get_template('templates/list_page_template.html')
+        self.response.write(list_page_template.render())
 # class ResultPageHandler(webapp2.RequestHandler):
 #     def post(self):
 
