@@ -23,10 +23,11 @@ def quotePicker():
 class WelcomePageHandler(webapp2.RequestHandler):
     def get(self):
         welcome_page_template = the_jinja_env.get_template('templates/welcome_page_template.html')
+        welcome_quote = self.request
         welcome_variables = {
             'quote': str(quotePicker())
         }
-        self.response.write(welcome_page_template.render())
+        self.response.write(welcome_page_template.render(welcome_variables))
 
 
 
