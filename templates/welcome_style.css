@@ -1,6 +1,12 @@
 /* Welcome Header */
 .welcome{
-    text-align: center;
+  text-align: center;
+  color: white;
+  background-color: #4670a6;
+  font-size: 150%;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 10px 10px 5px -5px grey;
 }
 
 
@@ -12,3 +18,7 @@
 #startbutton {
 
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
