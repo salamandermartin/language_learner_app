@@ -1,0 +1,24 @@
+/* Welcome Header */
+.welcome{
+  text-align: center;
+  color: white;
+  background-color: #4670a6;
+  font-size: 150%;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 10px 10px 5px -5px grey;
+}
+
+
+/* Start button */
+.start{
+    text-align: center;
+}
+
+#startbutton {
+
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 5fr 25fr;
