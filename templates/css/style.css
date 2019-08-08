@@ -1,23 +1,30 @@
+/* ----------WEBSITE DEFAULT LAYOUT---------- */
 /* HEADER */
-.header{
+.pageheader{
   text-align: center;
   color: white;
   background-color: #4670a6;
   font-size: 150%;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 10px 10px 5px -5px grey;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid;
+  border-color: black;
+  box-shadow  : 10px 10px 10px grey;
 }
-
+#pagequote{
+  text-align: center;
+}
 /* CONTAINER */
-.container {
+.pagebody{
   display: grid;
   grid-template-columns: 5fr 25fr;
 }
+
+/* ----------WEBSITE CONTENTS---------- */
 /* CREATORS TAB */
 .creatorstab{
   border-style: solid;
-  padding: 10px;
+  padding: 5px;
 }
 
 /* FEED TAB */
@@ -57,9 +64,7 @@ table#t01 {
    text-align: center;
    font-size: 30px;
 }
-h1{
-  box-shadow:20px 2px 10px #070808;
-}
+
 .unorderlist{
   text-align: center;
 }
