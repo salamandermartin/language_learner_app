@@ -78,6 +78,22 @@ class ResultPageHandler(webapp2.RequestHandler):
             'tr_items5':''
         }
         self.response.write(result_page_template.render(list_variables))
+        
+# Before running this, run the following once in terminal
+# export GOOGLE_APPLICATION_CREDENTIALS="/Users/google/Downloads/temp-google-credentials.json"
+
+    # from google.cloud import translate
+    # translate_client = translate.Client()
+    #
+    # text = u'' #(the words that user is going to put in string)
+    # target = 'ES' #have to use the abbreviation
+    # translation = translate_client.translate(
+    #     text,
+    #     target_language=target)
+    #
+    # print(u'Text: {}'.format(text))
+    # print(u'Translation: {}'.format(translation['translatedText']))
+
 
 #app configuration section
 app = webapp2.WSGIApplication([
