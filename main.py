@@ -3,6 +3,7 @@ import jinja2
 import os
 import webapp2
 import random
+import other_func
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -16,42 +17,6 @@ def quotePicker():
               '"With languages, you are at home anywhere." \n -Edmund de Waal ']
     chosen_quote = quotes[decider]
     return chosen_quote
-
-#some exceptions when using this function
-def make_plural(x):
-    if x[-2:] == 'sh' or 'ch':
-        return (str(x) + 'es')
-    elif x[-3:] == 'ife':
-        return (str(x[-3:]) + 'ives')
-    elif x[-2:] == 'us':
-        return (str(x[-2:]) + 'i')
-    elif x[-1:] == 'y':
-        return (str(x[-1:]) + 'ies')
-    elif x == 'people' or x == 'bread' or x == 'fish' or x == 'deer' or x == 'moose' or x == 'species' or x == 'sheep' or x == 'offspring':
-        return x
-    elif x == 'child':
-        return 'children'
-    elif x == 'foot':
-        return 'feet'
-    elif x == 'man':
-        return 'men'
-    elif x == 'mouse':
-        return 'mice'
-    elif x == 'ox':
-        return 'oxen'
-    elif x == 'person':
-        return 'people'
-    elif x == 'tooth':
-        return 'teeth'
-    elif x == 'goose':
-        return 'geese'
-    elif x == 'woman':
-        return 'women'
-    elif x == 'louse':
-        return 'lice'
-    else:
-        return (x + 's')
-
 
 #handlers
 class WelcomePageHandler(webapp2.RequestHandler):
@@ -79,6 +44,7 @@ class ResultPageHandler(webapp2.RequestHandler):
         item4 = self.request.get('Item 4')
         item5 = self.request.get('Item 5')
         itemList = [item1,item2,item3,item4,item5]
+        pl_Items_list = ['']
         #item in spanish singular
         #item in spanish plural
         list_variables = {
