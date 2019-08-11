@@ -18,16 +18,39 @@ def quotePicker():
     return chosen_quote
 
 #some exceptions when using this function
-def es_pl_translator(x):
-    if x[-1:] == 'z':
-        return (x[:-1] + 'ces')
-    elif x[-1:] == 's' or x[-1:] == 'x':
+def make_plural(x):
+    if x[-2:] == 'sh' or 'ch':
+        return (str(x) + 'es')
+    elif x[-3:] == 'ife':
+        return (str(x[-3:]) + 'ives')
+    elif x[-2:] == 'us':
+        return (str(x[-2:]) + 'i')
+    elif x[-1:] == 'y':
+        return (str(x[-1:]) + 'ies')
+    elif x == 'people' or x == 'bread' or x == 'fish' or x == 'deer' or x == 'moose' or x == 'species' or x == 'sheep' or x == 'offspring':
         return x
-    elif x[-1:] == 'a' or x[-1:] == 'e' or x[-1:] == 'o' or x[-1:] == 'i' or x[-1:] == 'u':
-        return (x + 's')
+    elif x == 'child':
+        return 'children'
+    elif x == 'foot':
+        return 'feet'
+    elif x == 'man':
+        return 'men'
+    elif x == 'mouse':
+        return 'mice'
+    elif x == 'ox':
+        return 'oxen'
+    elif x == 'person':
+        return 'people'
+    elif x == 'tooth':
+        return 'teeth'
+    elif x == 'goose':
+        return 'geese'
+    elif x == 'woman':
+        return 'women'
+    elif x == 'louse':
+        return 'lice'
     else:
-        return (x + 'es')
-
+        return (x + 's')
 
 
 #handlers
@@ -55,6 +78,7 @@ class ResultPageHandler(webapp2.RequestHandler):
         item3 = self.request.get('Item 3')
         item4 = self.request.get('Item 4')
         item5 = self.request.get('Item 5')
+        itemList = [item1,item2,item3,item4,item5]
         #item in spanish singular
         #item in spanish plural
         list_variables = {
@@ -78,7 +102,7 @@ class ResultPageHandler(webapp2.RequestHandler):
             'tr_items5':''
         }
         self.response.write(result_page_template.render(list_variables))
-        
+
 # Before running this, run the following once in terminal
 # export GOOGLE_APPLICATION_CREDENTIALS="/Users/google/Downloads/temp-google-credentials.json"
 
