@@ -1,75 +1,75 @@
-<!-- RESULT PAGE TEMPLATE -->
+<!-- RESULTS PAGE TEMPLATE -->
 <!-- HEAD SECTION -->
 <!DOCTYPE html>
 <head>
   <title>Phase Uno Gamers Only</title>
   <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
+  <!-- <link rel="stylesheet" href="css/style.css" type="text/css"> -->
 </head>
 
 <!-- BODY SECTION -->
-<body style="background-color:#b2b9c2">
-
-<!-- APP HEADER -->
+<body>
   <div class="pageheader">
-    <h1>Phase Uno's Language Learning App</h1>
+    <table border="0" align="center" margin="30px">
+      <tr>
+        <th>
+          <img id="element1" src="https://png.pngtree.com/svg/20170803/6ca076ff9c.svg" height="50px">
+        </th>
+        <th>
+          <h1 id="title">Phase Uno's Language Learning App</h1>
+        </th>
+      </tr>
+    </table>
   </div>
-  <hr>
 
-  <!-- THE BODY -->
-  <div class="pagebody">
-    <!-- TAB COLUMN -->
-    <div>
-      <!-- CREATOR TAB -->
-      <div class="creatorstab">
-      <h2>Creators:</h2>
-      <ul>
-        <li>Martin Salamanca</li>
-        <li>Hans Vidaure</li>
-        <li>Orzeeta Kamal</li>
-      </ul>
-      </div>
+<div class="row">
+  <div class="column left">
+    <ul class="navigation">
+      <li class="navigationlist"><a href="/">Home</a></li>
+      <li class="navigationlist"><a href="/list-go?">Game</a></li>
+      <li class="navigationlist"><a href="#contact">Contact</a></li>
+      <li class="navigationlist"><a href="#about">About</a></li>
+    </ul>
+  </div>
 
-    </div>
-
-    <!-- THE FEED TAB -->
-    <div class = "feedtab">
-
-      <!-- TABLE RESULTS -->
-      <div class="tableresult">
-        <table id="t01">
-          <tr>
-            <th>WORD</th>
-            <th>SINGULAR</th>
-            <th>PLURAL</th>
-          </tr>
-          <tr>
-            <td>{{firstitem}}</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>{{seconditem}}</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>{{thirditem}}</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>{{fourthitem}}</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>{{fifthitem}}</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
+  <div class="column middle">
+    <div class="tableresult">
+      <table id="tableresults">
+        <tr>
+          <th id="resultsheader">WORD</th>
+          <th id="resultsheader">SINGULAR</th>
+          <th id="resultsheader">PLURAL</th>
+        </tr>
+        <tr>
+          <td id="resultsdata">{{firstitem}}</td>
+          <td id="resultsdata"></td>
+          <td id="resultsdata"></td>
+        </tr>
+        <tr>
+          <td id="resultsdata">{{seconditem}}</td>
+          <td id="resultsdata"></td>
+          <td id="resultsdata"></td>
+        </tr>
+        <tr>
+          <td id="resultsdata">{{thirditem}}</td>
+          <td id="resultsdata"></td>
+          <td id="resultsdata"></td>
+        </tr>
+        <tr>
+          <td id="resultsdata">{{fourthitem}}</td>
+          <td id="resultsdata"></td>
+          <td id="resultsdata"></td>
+        </tr>
+        <tr>
+          <td id="resultsdata">{{fifthitem}}</td>
+          <td id="resultsdata"></td>
+          <td id="resultsdata"></td>
+        </tr>
+      </table>
     </div>
   </div>
 
+    <div class="column right">
+    </div>
+  </div>
 </body>

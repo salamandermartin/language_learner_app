@@ -1,85 +1,146 @@
-/* ----------WEBSITE DEFAULT LAYOUT---------- */
+/* WEBSITE DEFAULT LAYOUT */
 /* HEADER */
 .pageheader{
+  overflow: auto;
+  vertical-align: middle;
   text-align: center;
-  color: white;
-  background-color: #4670a6;
-  font-size: 150%;
+  color: black;
+  background-color: #2659c9;
+  font-size: 100%;
   padding: 5px;
-  margin: 5px;
   border: 1px solid;
   border-color: black;
-  box-shadow  : 10px 10px 10px grey;
+  box-shadow  : 10px 10px 10px black;
 }
+/* TITLE */
+#title {
+  margin-left: 15px;
+}
+
+/* BODY */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #ededed;
+}
+/* COLUMNS */
+.column {
+  float: left;
+  padding: 10px;
+}
+/* Left Column */
+.column.left {
+  width: 20%;;
+}
+/* Middle column */
+.column.middle {
+  width: 60%;
+}
+/* Right Column */
+.column.right {
+  width: 20%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+
+/* LEFT SIDE CONTENTS */
+.navigation {
+  list-style-type: none;
+  border: 1px solid black;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  background-color: #001f63;
+}
+
+.navigationlist a {
+  display: block;
+  color: white;
+  padding: 5% 5%;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+.navigationlist a:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/* FEED CONTENTS */
+/* Page Quote */
 #pagequote{
   text-align: center;
 }
-/* CONTAINER */
-.pagebody{
-  display: grid;
-  grid-template-columns: 5fr 25fr;
-}
-
-/* ----------WEBSITE CONTENTS---------- */
-/* CREATORS TAB */
-.creatorstab{
-  border-style: solid;
-  padding: 5px;
-}
-
-/* FEED TAB */
-.feedtab{
-  padding: 10px;
-}
-
 /* Start Button */
-#startbutton {
-
-}
 .start{
     text-align: center;
 }
-
-/* TABLE RESULTS */
-.tableresult {
-  text-align: center;
-}
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 15px;
-    text-align: left;
-}
-table#t01 {
-    width: 100%;
-    background-color: #f1f1c1;
-}
-
-/* DIVIDE */
-
-.direction {
-   text-align: center;
-   font-size: 30px;
-}
-
-.unorderlist{
-  text-align: center;
-}
-.go{
-  text-align: center;
-  border: none;
-  font-size: 5px;
-}
-.go button {
-  background-color: #4CAF50; /* Green */
+#startbutton {
+  background-color: #001f63;
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 100%;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* Table Data Results */
+.tableresult {
+  text-align: center;
+}
+#tableresults {
+    width: 100%;
+    background-color: #f1f1c1;
+    border-collapse: collapse;
+}
+#resultsheader{
+  height: 50px;
+  text-align: center;
+  border: 1px solid black
+}
+#resultsdata{
+  padding: 15px;
+  text-align: left;
+  border: 1px solid black
+}
+/* Directions */
+.directionstitle{
+   text-align: center;
+   font-size: 150%;
+   font-weight: bold;
+}
+.directions{
+  text-align: justify;
+}
+/* GO BUTTON */
+.go{
+  text-align: center;
+  border: none;
+}
+#gobutton{
+  background-color: #001f63;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100%;
+  margin: 4px 2px;
 }

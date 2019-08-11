@@ -1,29 +1,55 @@
-<!doctype html>
-
+<!-- LIST PAGE TEMPLATE -->
+<!-- HEAD SECTION -->
+<!DOCTYPE html>
 <head>
-  <title> Word List </title>
-  <link rel="stylesheet" href="style.css">
+  <title>Phase Uno Gamers Only</title>
+  <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
+  <!-- <link rel="stylesheet" href="css/style.css" type="text/css"> -->
 </head>
-<body style="background-color:#e0df84">
-  <section class="direction">
-  <h1>DIRECTIONS</h1>
-  </section>
-  <ul class="unorderlist">
-    <li>Enter your words</li>
-    <li>Press Go!</li>
-  </ul>
 
-  <form method="post" action="/result">
-    <input type="text" name="Item 1" value='Item #1'><br />
-    <input type="text" name="Item 2" value='Item #2'><br />
-    <input type="text" name="Item 3" value='Item #3'><br />
-    <input type="text" name="Item 4" value='Item #4'><br />
-    <input type="text" name="Item 5" value='Item #5'><br />
+<!-- BODY SECTION -->
+<body>
+  <div class="pageheader">
+    <table border="0" align="center" margin="30px">
+      <tr>
+        <th>
+          <img id="element1" src="https://png.pngtree.com/svg/20170803/6ca076ff9c.svg" height="50px">
+        </th>
+        <th>
+          <h1 id="title">Phase Uno's Language Learning App</h1>
+        </th>
+      </tr>
+    </table>
+  </div>
 
-    <div class="go">
-      <button id="gobutton" type="submit">Go !</button>
+<div class="row">
+  <div class="column left">
+    <ul class="navigation">
+      <li class="navigationlist"><a href="/">Home</a></li>
+      <li class="navigationlist"><a href="/list-go?">Game</a></li>
+      <li class="navigationlist"><a href="#contact">Contact</a></li>
+      <li class="navigationlist"><a href="#about">About</a></li>
+    </ul>
+  </div>
+
+  <div class="column middle">
+    <p class="directionstitle">DIRECTIONS</p>
+    <p class="directions">Enter your desired words you want to translate from English to Spanish in the list. Whenever you feel ready, press the button to perform the translation.<p>
+
+    <form method="post" action="/result">
+      <input type="text" name="Item 1" value='Item #1'><br>
+      <input type="text" name="Item 2" value='Item #2'><br>
+      <input type="text" name="Item 3" value='Item #3'><br>
+      <input type="text" name="Item 4" value='Item #4'><br>
+      <input type="text" name="Item 5" value='Item #5'><br>
+
+      <div class="go">
+        <button id="gobutton" type="submit">Go !</button>
+      </div>
+    </form>
+  </div>
+
+    <div class="column right">
     </div>
-  </form>
-
-
+  </div>
 </body>
