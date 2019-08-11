@@ -11,11 +11,22 @@ the_jinja_env = jinja2.Environment(
 
 def quotePicker():
     decider = random.randint(0,2)
-    quotes = ['If you talk to a man in a language he understands, that goes to his head. If you talk to him in his language, that goes to his heart. \n - Nelson Mandela',
-              'A different language is a different vision of life. \n -Federico Fellini',
-              'With languages, you are at home anywhere. \n -Edmund de Waal ']
+    quotes = ['"If you talk to a man in a language he understands, that goes to his head. If you talk to him in his language, that goes to his heart." \n - Nelson Mandela',
+              '"A different language is a different vision of life." \n -Federico Fellini',
+              '"With languages, you are at home anywhere." \n -Edmund de Waal ']
     chosen_quote = quotes[decider]
     return chosen_quote
+
+#some exceptions when using this function
+def es_pl_translator(x):
+    if x[-1:] == 'z':
+        return (x[:-1] + 'ces')
+    elif x[-1:] == 's' or x[-1:] == 'x':
+        return x
+    elif x[-1:] == 'a' or x[-1:] == 'e' or x[-1:] == 'o' or x[-1:] == 'i' or x[-1:] == 'u':
+        return (x + 's')
+    else:
+        return (x + 'es')
 
 
 
@@ -44,14 +55,45 @@ class ResultPageHandler(webapp2.RequestHandler):
         item3 = self.request.get('Item 3')
         item4 = self.request.get('Item 4')
         item5 = self.request.get('Item 5')
+        #item in spanish singular
+        #item in spanish plural
         list_variables = {
+            #word in english
             'firstitem': item1,
             'seconditem': item2,
             'thirditem': item3,
             'fourthitem': item4,
-            'fifthitem': item5
+            'fifthitem': item5,
+            #word in spanish (singular)
+            'tr_item1':'',
+            'tr_item2':'',
+            'tr_item3':'',
+            'tr_item4':'',
+            'tr_item5':'',
+            #word in spanish (plural)
+            'tr_items1':'',
+            'tr_items2':'',
+            'tr_items3':'',
+            'tr_items4':'',
+            'tr_items5':''
         }
         self.response.write(result_page_template.render(list_variables))
+        
+# Before running this, run the following once in terminal
+# export GOOGLE_APPLICATION_CREDENTIALS="/Users/google/Downloads/temp-google-credentials.json"
+
+    # from google.cloud import translate
+    # translate_client = translate.Client()
+    #
+    # text = u'' #(the words that user is going to put in string)
+    # target = 'ES' #have to use the abbreviation
+    # translation = translate_client.translate(
+    #     text,
+    #     target_language=target)
+    #
+    # print(u'Text: {}'.format(text))
+    # print(u'Translation: {}'.format(translation['translatedText']))
+
 
 #app configuration section
 app = webapp2.WSGIApplication([
