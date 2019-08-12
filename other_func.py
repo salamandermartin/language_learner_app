@@ -1,3 +1,7 @@
+from google.cloud import translate
+
+# from .lib import google.cloud.translate as translate
+
 def make_plural(x):
     if x[-2:] == 'sh' or 'ch':
         return (str(x) + 'es')
@@ -39,13 +43,13 @@ def listPluralizer(x):
         x[item_index] = pl_Items
         item_index += 1
 
-def translate(x):
+def translator(x):
     translate_client = translate.Client()
-    text = u'Hello'
+    text = x
     target = 'ES'
     translation = translate_client.translate(
          text,
         target_language=target)
+    return(u'{}'.format(translation['translatedText']))
 
-    print(u'Text: {}'.format(text))
-    print(u'Translation: {}'.format(translation['translatedText']))
+print(translator('cube'))

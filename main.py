@@ -1,10 +1,8 @@
-#import section
 import jinja2
 import os
 import webapp2
 import random
 import other_func
-from google.cloud import translate
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -18,6 +16,7 @@ def quotePicker():
               '"With languages, you are at home anywhere." \n -Edmund de Waal ']
     chosen_quote = quotes[decider]
     return chosen_quote
+
 
 #handlers
 class WelcomePageHandler(webapp2.RequestHandler):
@@ -47,8 +46,6 @@ class ResultPageHandler(webapp2.RequestHandler):
         itemList = [item1,item2,item3,item4,item5]
         pl_Items_list = ['']
 	    #listPluralizer(pl_Items_list)
-        #item in spanish singular
-        #item in spanish plural
         list_variables = {
             #word in english
             'firstitem': item1,
@@ -57,17 +54,17 @@ class ResultPageHandler(webapp2.RequestHandler):
             'fourthitem': item4,
             'fifthitem': item5,
             #word in spanish (singular)
-            'tr_item1':'',#translate(item1),
-            'tr_item2':'',#translate(item2),
-            'tr_item3':'',#translate(item3),
-            'tr_item4':'',#translate(item4),
-            'tr_item5':'',#translate(item5),
+            'tr_item1':translator(item1),
+            'tr_item2':translator(item2),
+            'tr_item3':translator(item3),
+            'tr_item4':translator(item4),
+            'tr_item5':translator(item5),
             #word in spanish (plural)
-            'tr_items1':'',#translate(pl_Items_list[0]),
-            'tr_items2':'',#translate(pl_Items_list[1]),
-            'tr_items3':'',#translate(pl_Items_list[2]),
-            'tr_items4':'',#translate(pl_Items_list[3]),
-            'tr_items5':''#translate(pl_Items_list[4])
+            'tr_items1':translator(pl_Items_list[0]),
+            'tr_items2':translator(pl_Items_list[1]),
+            'tr_items3':translator(pl_Items_list[2]),
+            'tr_items4':translator(pl_Items_list[3]),
+            'tr_items5':translator(pl_Items_list[4])
         }
         self.response.write(result_page_template.render(list_variables))
 
@@ -87,5 +84,5 @@ app = webapp2.WSGIApplication([
     ('/list-go', ListPageHandler), #List Page
     ('/result', ResultPageHandler), #Results Page
     ('/about', AboutPageHandler), #About Page
-    ('/contact',ContactPageHandler)
+    ('/contact',ContactPageHandler) #Contact Page
 ], debug=True)
