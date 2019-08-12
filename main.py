@@ -4,6 +4,7 @@ import os
 import webapp2
 import random
 import other_func
+from google.cloud import translate
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
