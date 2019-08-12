@@ -70,11 +70,21 @@ class ResultPageHandler(webapp2.RequestHandler):
         }
         self.response.write(result_page_template.render(list_variables))
 
+class AboutPageHandler(webapp2.RequestHandler):
+    def get(self):
+        about_page_template = the_jinja_env.get_template('templates/about_page_template')
+        self.response.write(about_page_template.render())
 
+class ContactPageHandler(webapp2.RequestHandler):
+    def get(self):
+        contact_page_template = the_jinja_env.get_template('templates/contact_page_template')
+        self.response.write(contact_page_template.render())
 
 #app configuration section
 app = webapp2.WSGIApplication([
     ('/', WelcomePageHandler), #Welcome Page
     ('/list-go', ListPageHandler), #List Page
-    ('/result', ResultPageHandler) #Results Page
+    ('/result', ResultPageHandler), #Results Page
+    ('/about', AboutPageHandler), #About Page
+    ('/contact',ContactPageHandler)
 ], debug=True)
