@@ -2,7 +2,8 @@ import jinja2
 import os
 import webapp2
 import random
-import other_func
+from other_func import hard_coded_answer
+from other_func import pl_hard_coded_answers
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
