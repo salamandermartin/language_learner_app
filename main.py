@@ -72,12 +72,12 @@ class ResultPageHandler(webapp2.RequestHandler):
 
 class AboutPageHandler(webapp2.RequestHandler):
     def get(self):
-        about_page_template = the_jinja_env.get_template('templates/about_page_template')
+        about_page_template = the_jinja_env.get_template('templates/about_page_template.html')
         self.response.write(about_page_template.render())
 
 class ContactPageHandler(webapp2.RequestHandler):
     def get(self):
-        contact_page_template = the_jinja_env.get_template('templates/contact_page_template')
+        contact_page_template = the_jinja_env.get_template('templates/contact_page_template.html')
         self.response.write(contact_page_template.render())
 
 #app configuration section
