@@ -1,4 +1,4 @@
-from google.cloud import translate
+#from google.cloud import translate
 
 # from .lib import google.cloud.translate as translate
 
@@ -43,13 +43,45 @@ def listPluralizer(x):
         x[item_index] = pl_Items
         item_index += 1
 
-def translator(x):
-    translate_client = translate.Client()
-    text = x
-    target = 'ES'
-    translation = translate_client.translate(
-         text,
-        target_language=target)
-    return(u'{}'.format(translation['translatedText']))
+# def translator(x):
+#     translate_client = translate.Client()
+#     text = x
+#     target = 'ES'
+#     translation = translate_client.translate(
+#          text,
+#         target_language=target)
+#     return(u'{}'.format(translation['translatedText']))
 
-print(translator('cube'))
+def hard_coded_answer(x):
+    y = x.lower()
+    if y == 'dog':
+        return 'perro'
+    elif y == 'cat':
+        return 'gato'
+    elif y == 'bread':
+        return 'pan'
+    elif y == 'fish':
+        return 'pescado'
+    elif y == 'arm':
+        return 'brazo'
+    elif y == 'window':
+        return 'ventana'
+    elif y == 'door':
+        return 'puerta'
+
+def pl_hard_coded_answers(x):
+    y = x.lower()
+    if y == 'dog':
+        return 'perros'
+    elif y == 'cat':
+        return 'gatos'
+    elif y == 'bread':
+        return 'pan'
+    elif y == 'fish':
+        return 'pescado'
+    elif y == 'arm':
+        return 'brazos'
+    elif y == 'window':
+        return 'ventanas'
+    elif y == 'door':
+        return 'puertas'

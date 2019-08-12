@@ -44,7 +44,7 @@ class ResultPageHandler(webapp2.RequestHandler):
         item4 = self.request.get('Item 4')
         item5 = self.request.get('Item 5')
         itemList = [item1,item2,item3,item4,item5]
-        pl_Items_list = ['']
+        #pl_Items_list = ['']
 	    #listPluralizer(pl_Items_list)
         list_variables = {
             #word in english
@@ -54,17 +54,17 @@ class ResultPageHandler(webapp2.RequestHandler):
             'fourthitem': item4,
             'fifthitem': item5,
             #word in spanish (singular)
-            'tr_item1':translator(item1),
-            'tr_item2':translator(item2),
-            'tr_item3':translator(item3),
-            'tr_item4':translator(item4),
-            'tr_item5':translator(item5),
+            'tr_item1':hard_coded_answer(item1),
+            'tr_item2':hard_coded_answer(item2),
+            'tr_item3':hard_coded_answer(item3),
+            'tr_item4':hard_coded_answer(item4),
+            'tr_item5':hard_coded_answer(item5),
             #word in spanish (plural)
-            'tr_items1':translator(pl_Items_list[0]),
-            'tr_items2':translator(pl_Items_list[1]),
-            'tr_items3':translator(pl_Items_list[2]),
-            'tr_items4':translator(pl_Items_list[3]),
-            'tr_items5':translator(pl_Items_list[4])
+            'tr_items1':pl_hard_coded_answers(item1),
+            'tr_items2':pl_hard_coded_answers(item2),
+            'tr_items3':pl_hard_coded_answers(item3),
+            'tr_items4':pl_hard_coded_answers(item4),
+            'tr_items5':pl_hard_coded_answers(item5)
         }
         self.response.write(result_page_template.render(list_variables))
 
