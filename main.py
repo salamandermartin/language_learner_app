@@ -56,17 +56,17 @@ class ResultPageHandler(webapp2.RequestHandler):
             'fourthitem': item4,
             'fifthitem': item5,
             #word in spanish (singular)
-            'tr_item1':translate(pl_Items_list[0]),
-            'tr_item2':translate(pl_Items_list[1]),
-            'tr_item3':translate(pl_Items_list[2]),
-            'tr_item4':translate(pl_Items_list[3]),
-            'tr_item5':translate(pl_Items_list[4]),
+            'tr_item1':translate(item1),
+            'tr_item2':translate(item2),
+            'tr_item3':translate(item3),
+            'tr_item4':translate(item4),
+            'tr_item5':translate(item5),
             #word in spanish (plural)
-            'tr_items1':'',
-            'tr_items2':'',
-            'tr_items3':'',
-            'tr_items4':'',
-            'tr_items5':''
+            'tr_items1':translate(pl_Items_list[0]),
+            'tr_items2':translate(pl_Items_list[1]),
+            'tr_items3':translate(pl_Items_list[2]),
+            'tr_items4':translate(pl_Items_list[3]),
+            'tr_items5':translate(pl_Items_list[4])
         }
         self.response.write(result_page_template.render(list_variables))
 
