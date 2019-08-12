@@ -144,3 +144,26 @@ body {
   font-size: 100%;
   margin: 4px 2px;
 }
+.contactdisplay{
+  text-align: center;
+}
+.tablecontact {
+    width: 100%;
+    background-color: #f1f1c1;
+    border-collapse: collapse;
+}
+.contactheader{
+  text-align: center;
+  border: 1px solid black
+}
+.contactpic{
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  border: 1px solid black
+}
+.contactdata{
+  padding: 15px;
+  text-align: left;
+  border: 1px solid black
