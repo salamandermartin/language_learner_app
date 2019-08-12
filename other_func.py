@@ -69,7 +69,7 @@ def hard_coded_answer(x):
     elif y == 'door':
         return 'puerta'
     elif y == 'mouse':
-        return 'ratón'
+        return 'raton'
     elif y == 'computer':
         return 'computadora'
 
@@ -91,5 +91,5 @@ def pl_hard_coded_answers(x):
         return 'puertas'
     elif y == 'mouse':
         return 'ratones'
-    elif y == 'computer'
+    elif y == 'computer':
         return 'computadoras'
