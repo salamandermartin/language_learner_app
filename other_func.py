@@ -36,5 +36,25 @@ def listPluralizer(x):
     item_index = 0
     for i in x:
         pl_Items = make_plural(i)
-        pl_Items_list[item_index] = pl_Items
+        x[item_index] = pl_Items
         item_index += 1
+
+def translate(x):
+	return None
+
+# Before running this, run the following once in terminal
+# export GOOGLE_APPLICATION_CREDENTIALS="/Users/google/Downloads/temp-google-credentials.json"
+
+    # from google.cloud import translate
+    # translate_client = translate.Client()
+    #
+    # text = u'' #(the words that user is going to put in string)
+    # target = 'ES' #have to use the abbreviation
+    # translation = translate_client.translate(
+    #     text,
+    #     target_language=target)
+    #
+    # print(u'Text: {}'.format(text))
+    # print(u'Translation: {}'.format(translation['translatedText']))
+
+

@@ -45,6 +45,7 @@ class ResultPageHandler(webapp2.RequestHandler):
         item5 = self.request.get('Item 5')
         itemList = [item1,item2,item3,item4,item5]
         pl_Items_list = ['']
+	listPluralizer(pl_Items_list)
         #item in spanish singular
         #item in spanish plural
         list_variables = {
@@ -55,11 +56,11 @@ class ResultPageHandler(webapp2.RequestHandler):
             'fourthitem': item4,
             'fifthitem': item5,
             #word in spanish (singular)
-            'tr_item1':'',
-            'tr_item2':'',
-            'tr_item3':'',
-            'tr_item4':'',
-            'tr_item5':'',
+            'tr_item1':translate(pl_Items_list[0]),
+            'tr_item2':translate(pl_Items_list[1]),
+            'tr_item3':translate(pl_Items_list[2]),
+            'tr_item4':translate(pl_Items_list[3]),
+            'tr_item5':translate(pl_Items_list[4]),
             #word in spanish (plural)
             'tr_items1':'',
             'tr_items2':'',
@@ -69,20 +70,6 @@ class ResultPageHandler(webapp2.RequestHandler):
         }
         self.response.write(result_page_template.render(list_variables))
 
-# Before running this, run the following once in terminal
-# export GOOGLE_APPLICATION_CREDENTIALS="/Users/google/Downloads/temp-google-credentials.json"
-
-    # from google.cloud import translate
-    # translate_client = translate.Client()
-    #
-    # text = u'' #(the words that user is going to put in string)
-    # target = 'ES' #have to use the abbreviation
-    # translation = translate_client.translate(
-    #     text,
-    #     target_language=target)
-    #
-    # print(u'Text: {}'.format(text))
-    # print(u'Translation: {}'.format(translation['translatedText']))
 
 
 #app configuration section
