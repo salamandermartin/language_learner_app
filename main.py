@@ -2,8 +2,9 @@ import jinja2
 import os
 import webapp2
 import random
-from other_func import hard_coded_answer
-from other_func import pl_hard_coded_answers
+from other_func import translator
+from other_func import listPluralizer
+from other_func import make_plural
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -44,9 +45,7 @@ class ResultPageHandler(webapp2.RequestHandler):
         item3 = self.request.get('Item 3')
         item4 = self.request.get('Item 4')
         item5 = self.request.get('Item 5')
-        itemList = [item1,item2,item3,item4,item5]
-        #pl_Items_list = ['']
-	    #listPluralizer(pl_Items_list)
+        language = self.request.get('language')
         list_variables = {
             #word in english
             'firstitem': item1,
@@ -55,17 +54,17 @@ class ResultPageHandler(webapp2.RequestHandler):
             'fourthitem': item4,
             'fifthitem': item5,
             #word in spanish (singular)
-            'tr_item1':hard_coded_answer(item1),
-            'tr_item2':hard_coded_answer(item2),
-            'tr_item3':hard_coded_answer(item3),
-            'tr_item4':hard_coded_answer(item4),
-            'tr_item5':hard_coded_answer(item5),
+            'tr_item1':translator((item1),language),
+            'tr_item2':translator((item2),language),
+            'tr_item3':translator((item3),language),
+            'tr_item4':translator((item4),language),
+            'tr_item5':translator((item5),language),
             #word in spanish (plural)
-            'tr_items1':pl_hard_coded_answers(item1),
-            'tr_items2':pl_hard_coded_answers(item2),
-            'tr_items3':pl_hard_coded_answers(item3),
-            'tr_items4':pl_hard_coded_answers(item4),
-            'tr_items5':pl_hard_coded_answers(item5)
+            'tr_items1':translator((make_plural(item1)),language),
+            'tr_items2':translator((make_plural(item2)),language),
+            'tr_items3':translator((make_plural(item3)),language),
+            'tr_items4':translator((make_plural(item4)),language),
+            'tr_items5':translator((make_plural(item5)),language)
         }
         self.response.write(result_page_template.render(list_variables))
 

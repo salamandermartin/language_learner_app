@@ -1,9 +1,12 @@
-#from google.cloud import translate
+from requests_toolbelt.adapters import appengine
+appengine.monkeypatch()
+from google.cloud import translate
 
-# from .lib import google.cloud.translate as translate
 
 def make_plural(x):
-    if x[-2:] == 'sh' or 'ch':
+    if x[-2:] == 'sh':
+        return (str(x) + 'es')
+    elif x[-2:] == 'ch':
         return (str(x) + 'es')
     elif x[-3:] == 'ife':
         return (str(x[-3:]) + 'ives')
@@ -42,15 +45,16 @@ def listPluralizer(x):
         pl_Items = make_plural(i)
         x[item_index] = pl_Items
         item_index += 1
+    return x
 
-# def translator(x):
-#     translate_client = translate.Client()
-#     text = x
-#     target = 'ES'
-#     translation = translate_client.translate(
-#          text,
-#         target_language=target)
-#     return(u'{}'.format(translation['translatedText']))
+def translator(x,y):
+    translate_client = translate.Client()
+    text = x
+    target = y
+    translation = translate_client.translate(
+         text,
+        target_language=target)
+    return(u'{}'.format(translation['translatedText']))
 
 def hard_coded_answer(x):
     y = x.lower()
